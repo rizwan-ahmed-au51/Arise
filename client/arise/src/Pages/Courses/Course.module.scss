@@ -1,0 +1,292 @@
+@use "../../assets/sass/index.scss" as *;
+
+.course {
+    margin-top: 80px;
+    padding: $gap;
+  
+    @media #{$laptop} {
+    }
+  
+    @media #{$md} {
+      padding: $gap_lg;
+    }
+  
+    @media #{$xs} {
+      padding: $gap_md;
+    }
+  
+    .heading {
+      h1 {
+        @include heading_h1;
+        padding: 40px 0px;
+  
+        @media #{$xs} {
+          @include heading_H1_display_small;
+          padding: 0px;
+        }
+      }
+    }
+  
+    .course_btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      gap: 16px;
+      align-self: stretch;
+      flex-wrap: wrap;
+      padding: 40px 0px;
+  
+      a {
+        text-decoration: none;
+        transition: 0.5s all;
+        &:hover {
+          background: $navHover;
+          color: $text_highlited_secondary;
+          border-radius: 8px;
+        }
+        button {
+          display: flex;
+          width: 253px;
+          padding: 12px 24px;
+          align-items: center;
+          gap: 12px;
+          border-radius: var(--BorderRadius-Lg, 8px);
+          border: var(--BorderWidth-Md, 2px) solid var(--Border-Action, #2540ae);
+          background: rgba(255, 255, 255, 0.3);
+  
+          @include belowHeading_p;
+          font-weight: 500;
+          color: $text_highlited_primary;
+          transition: 0.5s all;
+          &:hover {
+            background: $bg;
+            color: $text_highlited_secondary;
+          }
+          @media #{$xs} {
+            font-size: var(--FontSize-Body-Md, 14px);
+            line-height: var(--LineHeight-Body-Md, 22px); /* 157.143% */
+          }
+        }
+      }
+    }
+  
+    .batch_card {
+      margin-top: 80px;
+      padding: 40px;
+      gap: var(--spacing-horizontal-2-xl-gutter, 32px);
+      align-self: stretch;
+  
+      @media #{$laptop} {
+      }
+  
+      @media #{$lg} {
+        margin-top: 80px;
+      }
+  
+      @media #{$md} {
+        margin-top: 60px;
+        padding: 0px;
+      }
+  
+      @media #{$xs} {
+        margin-top: 40px;
+        padding: 0px;
+      }
+  
+      .one,
+      .three,
+      .five {
+        @media #{$md} {
+          flex-direction: column-reverse;
+        }
+  
+        @media #{$xs} {
+          flex-direction: column-reverse;
+        }
+      }
+  
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+  
+        @media #{$md} {
+          width: 718px;
+          height: 480px;
+          object-fit: cover;
+        }
+  
+        @media #{$xs} {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+        }
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--Spacing-Horizontal-Xl, 24px);
+        align-self: stretch;
+        @media #{$xs} {
+          gap: 12px;
+        }
+  
+        h1 {
+          @include heading_H1_48;
+          text-align: start;
+  
+          @media #{$xs} {
+            @include heading_h1_40_xs;
+          }
+        }
+  
+        .overview {
+          p {
+            color: $text_primary;
+            text-align: justify;
+            /* Desktop/Body/Large/Regular */
+            font-family: var(--Type-FontFamily-Primary, Roboto);
+            font-size: var(--FontSize-Body-lg, 18px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: var(--LineHeight-Body-lg, 26px);
+            letter-spacing: var(--LetterSpacing-Body-lg, 0px);
+            span {
+              color: $text_highlited_primary;
+              text-align: justify;
+  
+              /* Desktop/H6/Bold */
+              font-family: var(--Type-FontFamily-Primary, Roboto);
+              font-size: var(--FontSize-Heading-H6, 20px);
+              font-style: normal;
+              font-weight: 700;
+              line-height: var(--LineHeight-Heading-H6, 28px); /* 140% */
+              letter-spacing: var(--LetterSpacing-Heading-H6, -0.25px);
+  
+              @media #{$xs} {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+  
+            em {
+              color: $Text_Neutral_Tertiary;
+  
+              /* Desktop/Body/Large/Regular */
+              font-family: var(--Type-FontFamily-Primary, Roboto);
+              font-size: var(--FontSize-Body-lg, 18px);
+              font-style: normal;
+              font-weight: 400;
+              line-height: var(--LineHeight-Body-lg, 26px);
+              letter-spacing: var(--LetterSpacing-Body-lg, 0px);
+  
+              @media #{$xs} {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+  
+            @media #{$xs} {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          gap: 8px;
+        }
+      }
+  
+      .content_row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        row-gap: 20px;
+        align-self: stretch;
+        flex-wrap: wrap;
+  
+        .content_icon {
+          display: flex;
+          width: 160px;
+          padding: 8px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+          border-radius: 8px;
+          border: 1px solid var(--Border-Teritary, #d1d5db);
+          background: var(--Surface-Primary, #fff);
+  
+          p {
+            @include p18;
+            text-align: left;
+  
+            @media #{$xs} {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+        display: flex;
+        justify-content: end;
+        button {
+          @extend .button;
+  
+          @media #{$xs} {
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+  
+  .contact_form {
+    // padding: $gap;
+  
+    // @media #{$lg} {
+    //   padding: $gap_lg;
+    // }
+  
+    // @media #{$md} {
+    //   padding: $gap_md;
+    // }
+  
+    // @media #{$xs} {
+    //   padding: $gap_xs;
+    // }
+    img {
+      width: 100%;
+    }
+  
+    .form {
+      padding: 16px;
+      border-radius: 24px;
+      background-color: $surface_secondary;
+  
+      .form-floating {
+        > label,
+        select {
+          @include belowHeading_p;
+          color: $Text_Neutral_Tertiary;
+        }
+      }
+      h5 {
+        @include h5;
+      }
+  
+      a {
+        text-decoration: none;
+        display: flex;
+        justify-content: end;
+        button {
+          @extend .button;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+  

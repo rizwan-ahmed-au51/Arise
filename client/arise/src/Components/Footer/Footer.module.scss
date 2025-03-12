@@ -1,0 +1,190 @@
+@use "../../assets/sass/index.scss" as *;
+
+footer {
+  .footer_content {
+    background-color: $bg;
+    padding-top: 24px;
+
+    @media #{$xs} {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer_logo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex: 1 0 0;
+      align-self: stretch;
+
+      @media #{$xs} {
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        width: 161.161px;
+        height: 56px;
+      }
+      p {
+        color: $text_secondary;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 24px;
+        letter-spacing: 0px;
+        padding: 16px 0px;
+        text-align: justify;
+
+        @media #{$xs} {
+          font-size: var(--FontSize-Body-Md, 14px);
+          letter-spacing: var(--LetterSpacing-Body-Md, 0px);
+          padding: $gap_md;
+        }
+      }
+
+      .icons {
+        @extend .icons;
+
+        @media #{md} {
+          display: flex;
+          margin-left: 0px;
+        }
+      }
+    }
+    .footer_links {
+      padding-left: 140px;
+
+      @media #{$md} {
+        padding-left: 40px;
+      }
+
+      @media #{$xs} {
+        padding: 24px 0px 24px 0px;
+      }
+      h6 {
+        @include h6;
+        @media #{$xs} {
+          text-align: center;
+          font-size: var(--FontSize-Heading-H6, 16px);
+          line-height: var(--LineHeight-Heading-H6, 24px); /* 150% */
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $text_secondary;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 24px;
+        letter-spacing: 0px;
+        display: flex;
+        padding: 10px 0px;
+        transition: 0.5s all;
+
+        &:hover {
+          transform: translateX(5px);
+        }
+
+        @media #{$xs} {
+          font-size: var(--FontSize-Body-Md, 14px);
+          letter-spacing: var(--LetterSpacing-Body-Md, 0px);
+          justify-content: center;
+        }
+      }
+    }
+    .footer_contact {
+      @media #{$md} {
+        margin-left: -3.3rem;
+        text-align: justify;
+      }
+
+      h6 {
+        @include h6;
+
+        @media #{$xs} {
+          text-align: center;
+          font-size: var(--FontSize-Heading-H6, 16px);
+          line-height: var(--LineHeight-Heading-H6, 24px); /* 150% */
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $text_secondary;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 24px;
+        letter-spacing: 0px;
+        display: flex;
+        padding: 10px 0px;
+        transition: 0.5s all;
+        gap: 10px;
+
+        &:hover {
+          transform: translateX(5px);
+        }
+
+        @media #{$xs} {
+          font-size: var(--FontSize-Body-Md, 14px);
+          letter-spacing: var(--LetterSpacing-Body-Md, 0px);
+          justify-content: center;
+        }
+      }
+
+      .social {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @media #{$xs} {
+          justify-content: center;
+        }
+        .whatsapp,
+        .facebook,
+        .insta,
+        .youtube {
+          a {
+            transition: 0.5s all;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mini_ftr {
+   
+    padding: 2px 0px;
+    background-color: $text_highlited_primary;
+    text-align: center;
+
+    @media #{$xs} {
+      // flex-direction: column;
+      // text-align: center;
+      // gap: 12px;
+    }
+
+    p {
+      color: var(--Text-Action-OnAction, #fff);
+      margin-bottom: 0;
+      font-weight: 500;
+      letter-spacing: 0.50px;
+    }
+    // a {
+    //   text-decoration: none;
+    //   color: var(--Text-Action-OnAction, #fff);
+
+    //   &:hover {
+    //    text-decoration: underline;
+    //   }
+    // }
+  }
+}

@@ -1,0 +1,213 @@
+@use "../../assets/sass/index.scss" as *;
+
+.why_choose {
+    padding: $gap;
+    display: flex;
+    height: 100%;
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-horizontal-2-xl-gutter, 24px);
+    align-self: stretch;
+    border-radius: var(--BorderRadius-Lg, 8px);
+    border: 1px solid var(--Border-Teritary, #d1d5db);
+    background: var(--Surface-Secondary, #f9fafb);
+
+    @media #{$md} {
+      margin-top: 16px;
+    }
+
+    .why_choose_box {
+      display: flex;
+      align-items: flex-start;
+      align-content: flex-start;
+      gap: 32px var(--spacing-vertical-2-xl-gutter, 24px);
+      align-self: stretch;
+      flex-wrap: wrap;
+    }
+
+    .left_box {
+      display: flex;
+      width: 46%;
+      height: 172px;
+      padding: 8px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      border-radius: var(--BorderRadius-Md, 4px);
+      border: 1px solid var(--Border-Teritary, #d1d5db);
+      background: $surface_primaryWhite;
+
+      @media #{$md} {
+        width: 197.2px;
+      }
+    }
+  }
+.founder {
+  padding: $gap;
+
+  @media #{$laptop} {
+  }
+
+  @media #{$lg} {
+    padding: $gap_lg;
+  }
+
+  @media #{$md} {
+    padding: $gap_md;
+  }
+
+  @media #{$sm} {
+  }
+  h1 {
+    @include headingMiddle_h1;
+    padding-bottom: 32px;
+
+    @media #{$lg} {
+      padding-bottom: 0px;
+    }
+
+    @media #{$md} {
+      padding-bottom: 0px;
+    }
+
+    @media #{$xs} {
+      padding-bottom: 0px;
+    }
+  }
+
+  .founder_content {
+    .row {
+      @media #{$md} {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      @media #{$xs} {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      img {
+        width: 405px;
+        align-self: stretch;
+
+        @media #{$lg} {
+          width: 505px;
+        }
+
+        @media #{$md} {
+          width: 100%;
+          height: 523.945px;
+          object-fit: contain;
+        }
+
+        @media #{$xs} {
+        }
+      }
+    }
+  }
+
+  p {
+    @include belowHeading_p;
+    padding: 0px;
+  }
+
+  .vision_mission {
+    @media #{$laptop} {
+      padding-top: 80px;
+    }
+    @media #{$lg} {
+      padding: $gap_lg;
+    }
+    @media #{$md} {
+      padding: $gap_md;
+    }
+
+    .row {
+      @media #{$md} {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      
+      
+    }
+  }
+}
+
+.vision {
+    border-radius: var(--BorderRadius-Lg, 8px);
+    border: 1px solid var(--Border-Teritary, #d1d5db);
+    background: $surface_secondary;
+    padding: 16px;
+    p {
+      text-align: justify;
+    }
+  }
+  .values {
+    margin-top: 32px;
+    border-radius: var(--BorderRadius-Lg, 8px);
+    border: 1px solid var(--Border-Teritary, #d1d5db);
+    background: $surface_secondary;
+    padding: 16px;
+    gap: 16px;
+    p {
+      text-align: justify;
+    }
+
+    svg {
+      padding-right: 8px;
+    }
+  }
+
+.faculty {
+  @media #{$laptop} {
+    padding-bottom: 80px;
+  }
+  @media #{$lg} {
+    padding: $gap_lg;
+  }
+  @media #{$md} {
+    padding: $gap_md;
+  }
+
+  h1 {
+    @include headingMiddle_h1;
+    padding-bottom: 32px;
+
+    @media #{$lg} {
+      padding-bottom: 0px;
+    }
+
+    @media #{$md} {
+      padding-bottom: 0px;
+    }
+
+    @media #{$xs} {
+      padding-bottom: 0px;
+    }
+  }
+  h6 {
+    @include h6;
+    color: $text_highlited_secondary;
+  }
+
+  p {
+    @include p;
+    font-size: 16px;
+    color: $text_primary;
+    padding-bottom: 24px;
+    @media #{$lg} {
+      padding-bottom: 0px;
+    }
+
+    @media #{$md} {
+      padding-bottom: 0px;
+    }
+
+    @media #{$xs} {
+      padding-bottom: 0px;
+    }
+  }
+}

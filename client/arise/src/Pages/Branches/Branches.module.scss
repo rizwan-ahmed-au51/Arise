@@ -1,0 +1,634 @@
+@use "../../assets/sass/index.scss" as *;
+
+.branch {
+  padding: $gap;
+  overscroll-behavior: none;
+
+  @media #{$md} {
+    padding: $gap_lg;
+  }
+
+  @media #{$xs} {
+    padding: $gap_xs;
+  }
+
+  .IndiaMap {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    align-self: stretch;
+
+    @media #{$md} {
+      display: none;
+    }
+
+    @media #{$xs} {
+      display: none;
+    }
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1 0 0;
+
+      h2 {
+        color: $Text_Neutral_Tertiary;
+        font-size: var(--FontSize-Heading-H2, 36px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: var(--LineHeight-Heading-H2, 44px); /* 122.222% */
+        letter-spacing: var(--LetterSpacing-Heading-H2, -0.25px);
+      }
+
+      h1 {
+        @include heading_h1;
+        color: $text_highlited_primary;
+        text-align: left;
+      }
+
+      img {
+        width: 100%;
+        height: 266px;
+        object-fit: cover;
+        border-radius: 15px;
+        border-radius: var(--BorderRadius-Lg, 8px);
+        border: 1px solid var(--Border-Secondary, #5166be);
+      }
+    }
+
+    .map {
+      position: relative;
+      display: inline-block;
+      margin-top: 40px;
+      transition: 0.8s;
+
+      &:hover {
+        transition: 0.8s;
+      }
+
+      .map1 {
+        display: block;
+        width: 100%;
+      }
+
+      .hyd {
+        position: absolute;
+        top: 64%;
+        left: 40%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 64%;
+          left: 39%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+          transition: 0.5s;
+        }
+        // &:hover span {
+        //   transform: scale(1.1);
+        // }
+      }
+      .delhi {
+        position: absolute;
+        color: rgb(37, 64, 174);
+        top: 29%;
+        left: 36%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 28%;
+          left: 35%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+        }
+        // &:hover span {
+        //   display: block;
+        // }
+      }
+
+      .jaipur {
+        position: absolute;
+        top: 36%;
+        left: 33%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 36%;
+          left: 30%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+        }
+        // &:hover span {
+        //   display: block;
+        // }
+      }
+
+      .chennai {
+        position: absolute;
+        top: 80%;
+        left: 43%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 80%;
+          left: 43%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+        }
+        // &:hover span {
+        //   display: block;
+        // }
+      }
+
+      .kerala {
+        position: absolute;
+        top: 83%;
+        left: 30.5%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 83%;
+          left: 29.5%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+        }
+        // &:hover span {
+        //   display: block;
+        // }
+      }
+    }
+
+    // .vector {
+    //   @media #{$laptop} {
+
+    //     position: absolute;
+    //     right: 25%;
+    //     top: 25%;
+    //     width: 542.5px;
+    //     height: 204px;
+
+    //   }
+    //   @media #{$lg} {
+    //     position: absolute;
+    //     right: 26%;
+    //     top: 30%;
+    //     width: 436.5px;
+    //     height: 204px;
+    //   }
+    // }
+  }
+
+  .IndiaMapMd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    text-align: center;
+    align-self: stretch;
+    display: none;
+
+    @media #{$md} {
+      display: block;
+    }
+
+    @media #{$xs} {
+      display: block;
+      padding-top: 50px;
+    }
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1 0 0;
+
+      h2 {
+        @include headingMiddle_h2;
+
+        @media #{$xs} {
+          @include h4;
+          color: $Text_Neutral_Tertiary;
+        }
+      }
+
+      h1 {
+        @include heading_h1;
+        color: $text_highlited_primary;
+
+        @media #{$xs} {
+          @include heading_H1_display_small;
+          color: $text_highlited_primary;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: 266px;
+      object-fit: cover;
+      border-radius: 15px;
+      border-radius: var(--BorderRadius-Lg, 8px);
+    }
+
+    .map {
+      position: relative;
+      display: inline-block;
+      margin-top: 40px;
+      transition: 0.8s;
+
+      &:hover {
+        transition: 0.8s;
+      }
+
+      .map1 {
+        display: block;
+        width: 100%;
+      }
+
+      .hyd {
+        position: absolute;
+        top: 64%;
+        left: 40%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 64%;
+          left: 39%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+          transition: 0.5s;
+        }
+        // &:hover span {
+        //   transform: scale(1.1);
+        // }
+      }
+      .delhi {
+        position: absolute;
+        color: rgb(37, 64, 174);
+        top: 29%;
+        left: 36%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 28%;
+          left: 35%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+        }
+        // &:hover span {
+        //   display: block;
+        // }
+      }
+
+      .jaipur {
+        position: absolute;
+        top: 36%;
+        left: 33%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 36%;
+          left: 30%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+        }
+        // &:hover span {
+        //   display: block;
+        // }
+      }
+
+      .chennai {
+        position: absolute;
+        top: 80%;
+        left: 43%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 80%;
+          left: 43%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+        }
+        // &:hover span {
+        //   display: block;
+        // }
+      }
+
+      .kerala {
+        position: absolute;
+        top: 83%;
+        left: 30.5%;
+        transform: translate(-50%, -50%); /* Centers the overlay image */
+        width: 2.5rem;
+        img {
+          position: absolute;
+          top: 83%;
+          left: 29.5%;
+          transform: translate(-50%, -50%); /* Centers the overlay image */
+          width: 2.5rem;
+        }
+        span {
+          position: absolute;
+          display: block;
+          background: $text_highlited_primary;
+          font-weight: normal;
+          color: #fff;
+          padding: 0px 5px;
+          font-size: 12px;
+          top: 1.2rem;
+          border-radius: 5px;
+        }
+        // &:hover span {
+        //   display: block;
+        // }
+      }
+    }
+  }
+}
+
+.video_container {
+  .video_head {
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .video_wrapper {
+      display: flex;
+      padding: 134px 244px 128px 254px;
+      justify-content: center;
+      align-items: center;
+      flex: 1 0 0;
+      border-radius: 16px;
+      border: 1px solid var(--Border-Secondary, #5166be);
+      background: url(../../assets/images/index-page/core-2.jpg) lightgray 50% /
+        cover no-repeat;
+
+      @media #{$md} {
+        padding: 134px 244px 128px 254px;
+      }
+
+      svg {
+        @media #{$xs} {
+          width: 80.029px;
+          height: 79.398px;
+        }
+      }
+      @media #{$xs} {
+        display: flex;
+        padding: 72.398px 0px 72.203px 0px;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 0;
+        align-self: stretch;
+      }
+    }
+  }
+}
+
+.vision_section {
+  .image {
+    width: 100%;
+    height: 256px;
+    @media #{$md} {
+      width: 352px;
+      height: 248px;
+      object-fit: cover;
+    }
+
+    @media #{$xs} {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    img {
+      width: 100%;
+      height: 256px;
+      border-radius: var(--BorderRadius-Lg, 8px);
+      object-fit: cover;
+      @media #{$md} {
+        width: 100%;
+        height: 248px;
+        object-fit: cover;
+      }
+      @media #{$xs} {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+  }
+  .vision_text_sec {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-horizontal-2-xl-gutter, 32px);
+
+    @media #{$md} {
+      gap: 16px;
+    }
+
+    @media #{$xs} {
+      gap: 0px;
+    }
+
+    h1 {
+      @include headingMiddle_h1;
+      color: $text_highlited_primary;
+    }
+
+    p {
+      @include belowHeading_p;
+      color: $text_primary;
+    }
+
+    a {
+      display: flex;
+      padding: 12px 24px;
+      justify-content: end;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      button {
+        @extend .button;
+      }
+    }
+  }
+}
+
+.contact_sec {
+  padding: $gap;
+
+  @media #{$md} {
+    padding: $gap_md;
+  }
+
+  @media #{$xs} {
+    padding: $gap_xs;
+  }
+  .contact_sec_box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 32px var(--spacing-horizontal-2-xl-gutter, 32px);
+    align-self: stretch;
+    flex-wrap: wrap;
+    .call {
+      display: flex;
+      width: 302px;
+      height: 258px;
+      padding: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      border-radius: 16px;
+      border: 2px solid var(--Border-Teritary, #d1d5db);
+      transition: 0.5s;
+
+      &:hover {
+        box-shadow: 2px 2px 10px $navHover;
+        background-color: $surface_primaryWhite;
+      }
+      .icon {
+        svg {
+          padding: 8px;
+          border-radius: var(--BorderRadius-Lg, 8px);
+          border: 1px solid var(--Border-Teritary, #d1d5db);
+        }
+      }
+    }
+
+    .call_details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+
+      h6 {
+        @include h6;
+      }
+
+      p {
+        @include p;
+      }
+    }
+  }
+}
+
+.googleMap {
+  width: 100%;
+  height: 100%;
+}
+

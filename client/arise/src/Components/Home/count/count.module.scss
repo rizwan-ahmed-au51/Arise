@@ -1,0 +1,99 @@
+@use "../../../assets/sass/index.scss" as *;
+
+.count {
+  position: relative;
+  .img {
+    img {
+      padding-bottom: 60px;
+      flex-shrink: 0;
+      object-fit: cover;
+      width: 100%;
+      z-index: 1;
+
+      @media #{$xs} {
+        height: 522px;
+        object-position: 50%;
+      }
+    }
+  }
+  .counter {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+
+    @media #{$md} {
+      position: absolute;
+      bottom: 15%;
+      left: 3%;
+      transform: translateX(0%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      gap: 16px var(--spacing-vertical-2-xl-gutter, 16px);
+      align-self: stretch;
+      flex-wrap: wrap;
+      padding-bottom: 1rem;
+    }
+
+    @media #{$xs} {
+      position: absolute;
+      bottom: 15%;
+      left: 0%;
+      transform: translateX(0%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      gap: 16px var(--spacing-vertical-2-xl-gutter, 16px);
+      align-self: stretch;
+      flex-wrap: wrap;
+      padding-bottom: 1rem;
+    }
+
+    div {
+      width: 256px;
+      height: 148px;
+      padding: 24px;
+      align-items: center;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+      border-radius: var(--BorderRadius-Lg, 8px);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+
+      @media #{$lg} {
+        width: auto;
+      }
+
+      @media #{$md} {
+        width: 168px;
+      }
+
+      @media #{$xs} {
+        width: 160px;
+      }
+
+      h1 {
+        color: $text_highlited_primary;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: var(--LineHeight-Display-D2, 56px);
+        letter-spacing: var(--LetterSpacing-Display-D2, -1px);
+
+        @media #{$xs} {
+          font-size: 40px;
+        }
+      }
+      h3 {
+        @include p18;
+      }
+    }
+  }
+}

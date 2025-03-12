@@ -1,0 +1,47 @@
+// 🔶🔸font family🔸🔶
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overscroll-behavior: none;
+  font-family: "roboto";
+}
+
+$font: "Roboto";
+
+$fontSize_h6: "20px";
+$fontSize_h2: "36px";
+
+// 🔶🔸colors🔸🔶
+
+$btn: #2540ae;
+$btn_hover: #1a2d7c;
+$text_primary: #111827;
+$text_secondary: #374151;
+$text_highlited_primary: #2540ae;
+$text_highlited_secondary: #1a2d7c;
+$Text_Neutral_Tertiary: #6b7280;
+$navHover: #bbc4e6;
+$bg: #e9ecf7;
+$surface_primaryWhite: #ffffff;
+$surface_secondary: #f9fafb;
+
+// Box model
+$gap: 80px 0px;
+$gap_lg: 60px 0px;
+$gap_md: 40px 0px;
+$gap_xs:40px 0px;
+
+// 🔶🔸Responsive Variables🔸🔶
+
+// Responsive Variables
+$xxxl: "only screen and (min-width:1900px) and (max-width:2600px)";
+$xxl: "only screen and (min-width: 1601px) and (max-width: 1900px)";
+$xl: "only screen and (min-width: 1601px) and (max-width: 1800px)";
+$laptop: "only screen and (min-width: 1200px) and (max-width: 1600px)";
+$lg: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$md: "only screen and (min-width: 768px) and (max-width: 991px)";
+$xs: "(max-width: 767px)";
+$sm: "only screen and (min-width: 576px) and (max-width: 767px)";

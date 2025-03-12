@@ -1,0 +1,175 @@
+@mixin span {
+    color: $text_highlited_primary;
+  }
+  
+  @mixin heading_h1 {
+    font-size: 74px;
+    font-weight: 700;
+    line-height: var(--LineHeight-Display-D1, 88px);
+    letter-spacing: var(--LetterSpacing-Display-D1, -2px);
+    color: $text_primary;
+    text-align: center;
+  
+    span {
+      color: $text_highlited_primary;
+      font-size: 74px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 88px;
+      text-transform: capitalize;
+    }
+  }
+  
+  @mixin heading_H1_display_small {
+    color: var(--Text-Neutral-Primary, #111827);
+  
+    /* Desktop/Display/Large */
+    font-family: var(--Type-FontFamily-Primary, Roboto);
+    font-size: var(--FontSize-Display-D1, 56px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--LineHeight-Display-D1, 64px);
+    letter-spacing: var(--LetterSpacing-Display-D1, -2px);
+  
+    span {
+      color: $text_highlited_primary;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: var(--LineHeight-Display-D1, 64px);
+      letter-spacing: var(--LetterSpacing-Display-D1, -2px);
+    }
+  }
+  
+  @mixin heading_H1_48 {
+    color: $text_primary;
+    font-size: var(--FontSize-Display-D2, 48px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--LineHeight-Display-D2, 56px);
+    letter-spacing: var(--LetterSpacing-Display-D2, -1px);
+  
+    span {
+      @include span;
+      font-size: var(--FontSize-Display-D2, 48px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: var(--LineHeight-Display-D2, 56px);
+      letter-spacing: var(--LetterSpacing-Display-D2, -1px);
+    }
+  }
+  
+  @mixin heading_h1_40_xs {
+    color: $text_primary;
+    font-size: var(--FontSize-Display-D2, 40px);
+    font-weight: 700;
+    line-height: var(--LineHeight-Display-D2, 48px);
+  
+    span {
+      color: var(--Text-Highlited-Primary, #2540ae);
+      font-size: var(--FontSize-Display-D2, 40px);
+      font-weight: 700;
+      line-height: var(--LineHeight-Display-D2, 48px); /* 120% */
+    }
+  }
+  
+  @mixin headingMiddle_h2 {
+    color: $Text_Neutral_Tertiary;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: -0.25px;
+  }
+  
+  @mixin headingMiddle_h1 {
+    color: $text_primary;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.25px;
+    span {
+      @include span;
+      font-size: 40px;
+    }
+  }
+  
+  @mixin belowHeading_p {
+    color: $text_secondary;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+  }
+  
+  @mixin p {
+    color: $text_secondary;
+    font-family: $font;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 26px;
+    letter-spacing: 0px;
+  }
+  
+  @mixin h6 {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    font-size: 20px;
+    line-height: 28px;
+    color: $text_primary;
+  }
+  
+  @mixin h5 {
+    color: $text_primary;
+  
+    /* Desktop/H5/Bold */
+    font-size: var(--FontSize-Heading-H5, 24px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--LineHeight-Heading-H5, 32px); /* 133.333% */
+    letter-spacing: var(--LetterSpacing-Heading-H5, -0.25px);
+  }
+  
+  @mixin h4 {
+    color: $text_primary;
+    text-align: center;
+  
+    /* Desktop/H4/Bold */
+    font-size: 28px;
+    font-weight: 700;
+    line-height: var(--LineHeight-Heading-H4, 36px); /* 128.571% */
+    letter-spacing: var(--LetterSpacing-Heading-H4, -0.25px);
+    span {
+      color: var(--Text-Highlited-Primary, #2540ae);
+    }
+  }
+  
+  @mixin p18 {
+    color: $text_primary;
+    text-align: center;
+    font-size: var(--FontSize-Body-lg, 18px);
+    font-weight: 500;
+    line-height: var(--LineHeight-Body-lg, 26px);
+    letter-spacing: var(--LetterSpacing-Body-lg, 0px);
+  }
+  
+  // @mixin center-flex {
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //   }
+  
+  //   @mixin heading {
+  //     color: $color_primary;
+  //     font-size: 30px;
+  //     text-align: center;
+  //     padding: 30px;
+  //   }
+  
+  //   @mixin icons {
+  //     background-color: greenyellow;
+  //     color: white;
+  //     border-radius: 50%;
+  //   }
+  
