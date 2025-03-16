@@ -1,6 +1,9 @@
 import React from 'react';
 import style from './Home.module.scss';
-import Counter from './count/Counter';
+import Counter from './Count/Counter';
+import OnlineBatch from './Batches/OnlineBatch';
+import Branches from './Branches/Branches';
+
 
 const Home = () => {
     return (
@@ -25,6 +28,8 @@ const Home = () => {
                 </div>
             </section>
             <Counter />
+            <Branches />
+            <OnlineBatch />
         </>
     )
 }

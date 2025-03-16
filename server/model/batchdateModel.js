@@ -8,6 +8,7 @@ let batchdateSchema = new mongoose.Schema({
         required: true,
         trim: true,               // Removes unnecessary whitespace
     },
+    
     date: {
         type: [String],
         required: true,
