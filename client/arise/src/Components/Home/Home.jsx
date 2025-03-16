@@ -3,6 +3,10 @@ import style from './Home.module.scss';
 import Counter from './Count/Counter';
 import OnlineBatch from './Batches/OnlineBatch';
 import Branches from './Branches/Branches';
+import Register from './Register/Register';
+import About from './About';
+import Features from './Features';
+import Courses from './Courses/Courses';
 
 
 const Home = () => {
@@ -19,7 +23,7 @@ const Home = () => {
                             </h6>
                             <h4>Start Your <span>FMGE Journey</span></h4>
 
-                            <div className={style.btn}>
+                            <div className={style.btn1}>
                                 <button>View Courses</button>
                                 <button>Register Now</button>
                             </div>
@@ -30,6 +34,17 @@ const Home = () => {
             <Counter />
             <Branches />
             <OnlineBatch />
+            <Register
+                title={
+                    <>
+                        Let’s discuss about how we can help your <br />
+                        FMGE journey easier
+                    </>
+                }
+                link="https://student.arisemedicalacademy.com/register" />
+            <About />
+            <Features />
+            <Courses />
         </>
     )
 }

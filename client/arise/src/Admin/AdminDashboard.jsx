@@ -17,6 +17,7 @@ const { Header, Sider, Content } = Layout;
 const menuItems = [
     { key: "1", to: "", icon: <UserOutlined />, label: "Home" },
     { key: "2", to: "batchcard", icon: <TodayRoundedIcon />, label: "Batch Dates" },
+    { key: "3", to: "Gallery", icon: <TodayRoundedIcon />, label: "Gallery" },
 
 ];
 

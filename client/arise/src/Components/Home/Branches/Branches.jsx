@@ -28,12 +28,10 @@ const Branches = () => {
                         <p>Explore our upcoming offline batches across top institutions near you check start dates and
                             locations to find the <br /> perfect class for your medical coaching journey!</p>
 
-                        {/* Interactive Map */}
                         <div className={styles.mapContainer}>
                             <div className={`${styles.map} text-center`}>
                                 <img src={map} alt="Map" className={styles.map1} />
 
-                                {/* Hyderabad Marker */}
                                 <div className={styles.hyd}>
                                     <a href="https://register.arisemedicalacademy.com/">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
@@ -44,7 +42,6 @@ const Branches = () => {
                                     </a>
                                 </div>
 
-                                {/* Delhi Marker */}
                                 <div className={styles.delhi}>
                                     <a href="https://registerdelhi.arisemedicalacademy.com/">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">

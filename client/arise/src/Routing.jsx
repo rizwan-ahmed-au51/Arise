@@ -30,6 +30,7 @@ const Routing = () => {
                     <Route path='' element={<DashHome />} />
                     <Route path='batchcard' element={<BatchCard />} />
                     <Route path='batchdates' element={<BatchDates />} />
+                    <Route path='gallery' element={<Gallery />} />
                 </Route >
 
 
