@@ -45,8 +45,15 @@ const Home = () => {
             <About />
             <Features />
             <Courses />
+            <Register
+                title={
+                    <>
+                        Secure your spot and start your journey today
+                    </>
+                }
+                link="https://student.arisemedicalacademy.com/register" />
         </>
     )
 }
 
-export default Home
+export default Home;

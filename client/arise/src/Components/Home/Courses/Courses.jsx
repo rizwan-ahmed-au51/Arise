@@ -1,6 +1,11 @@
 import React from 'react';
-import styles from '../Home.module.scss';
+import styles from '../Courses/Courses.module.scss';
 import service1a from '../../../assets/images/batches/service-1a.jpg';
+import service3a from '../../../assets/images/batches/service-3a.jpeg';
+import service5a from '../../../assets/images/batches/service-5a.jpeg';
+import service2a from '../../../assets/images/batches/service-2a.jpg';
+import service4a from '../../../assets/images/batches/service-4a.jpg';
+import service6a from '../../../assets/images/batches/service-6a.jpeg';
 const courseData = [
     {
         id: "regular",
@@ -14,35 +19,35 @@ const courseData = [
         title: "Super Revision Batch",
         description:
             "Streamline your revision process with our Super Revision Batch, designed to maximize efficiency and effectiveness.",
-        image: "./assets/images/batches/service-3a.jpeg",
+        image: service3a,
     },
     {
         id: "foundation",
         title: "Foundation FMGE Batch",
         description:
             "Start your FMGE preparation early with our Foundation Batch, designed specifically for university students.",
-        image: "./assets/images/batches/service-5a.jpeg",
+        image: service5a,
     },
     {
         id: "semi_regular",
         title: "Semi-Regular Batch",
         description:
             "Ideal for those with limited time, our Semi-Regular Batch spans three months and covers 10 major subjects.",
-        image: "../assets/images/batches/service-2a.jpg",
+        image: service2a,
     },
     {
         id: "abhyas",
         title: "Test Series - Abhyas",
         description:
             "Sharpen your skills with our Test Series - Abhyas, offering a vast repository of over 7000+ questions.",
-        image: "./assets/images/batches/service-4a.jpg",
+        image: service4a,
     },
     {
         id: "in_university",
         title: "In-University Classes",
         description:
             "In partnership with universities worldwide, Arise Medical Academy offers in-university classes across various locations.",
-        image: "./assets/images/batches/service-6a.jpeg",
+        image: service6a,
     },
 ];
 
@@ -62,8 +67,10 @@ const Courses = () => {
                 <div className="row">
                     {courseData.map((course, index) => (
                         <div key={index} className="col-lg-6 col-md-6">
-                            <div className={styles.batch_container}>
-                                <img src={course.image} alt={course.title} className={styles.batch_image} />
+                            <div className={styles.batch_lft}>
+                                <div className={styles.pic}>
+                                    <img src={course.image} alt={course.title} />
+                                </div>
                                 <div className={styles.content}>
                                     <h5>{course.title}</h5>
                                     <p>{course.description}</p>

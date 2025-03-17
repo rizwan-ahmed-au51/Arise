@@ -1,0 +1,166 @@
+@use "../../../assets/sass/index.scss" as *;
+
+.courses {
+  padding: 80px 0px 0px 0px;
+
+  @media #{$md} {
+    padding: 60px 0px 0px 0px;
+  }
+
+  @media #{$xs} {
+    padding: 40px 0px 0px 0px;
+  }
+
+  .sec_title {
+    @extend .sec_title;
+    padding-bottom: 32px;
+
+    @media #{$xs} {
+      padding: 0px;
+    }
+    h2 {
+      @include headingMiddle_h2;
+      @media #{$xs} {
+        text-align: center;
+        font-size: var(--FontSize-Heading-H2, 28px);
+        line-height: var(--LineHeight-Heading-H2, 36px); /* 128.571% */
+      }
+    }
+    h1 {
+      @include headingMiddle_h1;
+      @media #{$xs} {
+        text-align: center;
+        font-size: var(--FontSize-Heading-H2, 32px);
+        line-height: var(--LineHeight-Heading-H2, 40px); /* 128.571% */
+        span {
+          font-size: var(--FontSize-Heading-H2, 32px);
+          line-height: var(--LineHeight-Heading-H2, 40px); /* 128.571% */
+        }
+      }
+    }
+  }
+
+  .batch_lft {
+    margin-bottom: 32px;
+    gap: 8px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1px solid var(--Border-Teritary, #d1d5db);
+    background: $surface_secondary;
+    transition: 0.5s;
+
+    &:hover {
+      box-shadow: 2px 2px 10px $navHover;
+      background-color: $surface_primaryWhite;
+    }
+
+    @media #{$xs} {
+      margin-bottom: 8px;
+    }
+
+    .pic {
+      img {
+        border-radius: 16px 16px 0px 0px;
+        background: url(../../../assets/images/batches/service-1a.jpg) lightgray
+          50% / cover no-repeat;
+        width: 100%;
+        height: auto;
+        @media #{$lg} {
+          width: 100%;
+        }
+      }
+    }
+
+    .content {
+      padding: 8px;
+
+      h5 {
+        @include h5;
+      }
+      p {
+        @include belowHeading_p;
+        padding: 0px;
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: flex-end;
+      text-decoration: none;
+
+      button {
+        @extend .button_Light;
+        transition: 0.5s all;
+        &:hover {
+          padding: 12px 24px;
+          background-color: $bg;
+        }
+      }
+    }
+  }
+
+  .batch_rgt {
+    height: 400px;
+    margin-bottom: 32px;
+    gap: 8px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1px solid var(--Border-Teritary, #d1d5db);
+    background: $surface_secondary;
+
+    transition: 0.5s;
+
+    &:hover {
+      box-shadow: 2px 2px 10px $navHover;
+      background-color: $surface_primaryWhite;
+    }
+
+    @media #{$xs} {
+      margin-bottom: 8px;
+    }
+
+    img {
+      border-radius: 16px 16px 0px 0px;
+      width: 100%;
+      height: 216px;
+
+      @media #{$lg} {
+        width: 100%;
+      }
+
+      @media #{$md} {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .content {
+      padding: 8px;
+
+      h5 {
+        @include h5;
+      }
+      p {
+        @include belowHeading_p;
+        padding: 0px;
+      }
+    }
+    a {
+      display: flex;
+      justify-content: flex-end;
+      text-decoration: none;
+
+      button {
+        @extend .button_Light;
+        transition: 0.5s all;
+        cursor: pointer;
+        &:hover {
+          padding: 12px 24px;
+          background-color: $bg;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../Home.module.scss"; // Import SCSS module
+import styles from "../Home.module.scss"; 
 import { NavLink } from "react-router-dom";
 
 const Register = ({ title, link }) => {
