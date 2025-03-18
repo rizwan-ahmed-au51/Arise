@@ -19,6 +19,7 @@ import kerala from './Pages/Branches/kerala'
 import NoPage from './Pages/NoPage'
 import DashHome from './Admin/DashHome'
 import Home from './Components/Home/Home'
+import CelebGallery from './Pages/Gallery/CelebGallery/CelebGallery'
 
 const Routing = () => {
     return (
@@ -41,6 +42,7 @@ const Routing = () => {
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/gallery' element={<Gallery />} />
+                <Route path="/celeb-gallery" element={<CelebGallery />} />
                 <Route path='/branches/hyderabad' Component={hyd} />
                 <Route path='/branches/delhi' Component={delhi} />
                 <Route path='/branches/jaipur' Component={jaipur} />

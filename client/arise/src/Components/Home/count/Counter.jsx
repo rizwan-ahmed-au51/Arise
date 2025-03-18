@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./count.module.scss";
-import Banner from "../../../assets/images/index-page/banner.png";
+import Banner from '../../../assets/images/index-page/banner.png';
 
 const Counter = () => {
     const [num1, setNum1] = useState(0);

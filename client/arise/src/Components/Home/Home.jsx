@@ -48,7 +48,7 @@ const Home = () => {
             <Register
                 title={
                     <>
-                        Secure your spot and start your journey today
+                       Secure your spot and start your journey today
                     </>
                 }
                 link="https://student.arisemedicalacademy.com/register" />
