@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import styles from './CelebGallery.module.scss'; // Assuming you're using CSS Modules
+import styles from './CelebGallery.module.scss';
 
-// Import all images
 import img1 from '../../../assets/images/gallery-page/1.jpg';
 import img2 from '../../../assets/images/gallery-page/2.jpg';
 import img3 from '../../../assets/images/gallery-page/3.jpg';
