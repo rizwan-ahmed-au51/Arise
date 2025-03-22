@@ -1,5 +1,7 @@
 let express = require("express");
-let Signup = require("../model/signupModel")
+let jwt = require("jsonwebtoken");
+let Signup = require("../model/signupModel");
+const signupmiddleware = require("../middleware/signupmiddleware");
 let signupRouting = express.Router();
 
 
@@ -13,13 +15,24 @@ signupRouting.post("/login", async (req, res) => {
     const { email, password } = req.body;
     let exists = await Signup.findOne({ email: email });
     if (!exists) {
-        res.send("No user Found");
+        return res.status(404).send("No user Found");
     }
-    else if (exists.password != password) {
-        res.send("Invalid");
-    } else {
-        res.send("Valid");
+    if (exists.password !== password) {
+        return res.status(401).send("Invalid Password");
     }
+    let payload = {
+        user: {
+            id: exists._id,
+        },
+    };
+    jwt.sign(payload, "Mehriz6229", { expiresIn: 360000 }, (err, token) => {
+        if (err) throw err;
+        res.send({ token });
+    });
 });
 
+
+signupRouting.get("/admindashboard", signupmiddleware, (req, res) => {
+    res.send("Welcome");
+});
 module.exports = signupRouting;

@@ -6,7 +6,6 @@ import BranchMap from '../../../Pages/Branches/Components/BranchMap';
 
 const Branches = () => {
     const [data, setData] = useState([]);
-
     useEffect(() => {
         axios.get(`http://localhost:4000/batchdates`)
             .then((res) => {
