@@ -2,11 +2,14 @@ import React from 'react';
 import style from './Home.module.scss';
 import Counter from './Count/Counter';
 import OnlineBatch from './Batches/OnlineBatch';
-import Branches from './Branches/Branches';
 import Register from './Register/Register';
 import About from './About';
 import Features from './Features';
 import Courses from './Courses/Courses';
+import Toppers from '../../Pages/Gallery/Toppers';
+import Journey from './Journey';
+import Testimonial from './Testimonial';
+import Branches from './DateCard/Branches';
 
 
 const Home = () => {
@@ -45,10 +48,13 @@ const Home = () => {
             <About />
             <Features />
             <Courses />
+            <Toppers />
+            <Journey />
+            <Testimonial />
             <Register
                 title={
                     <>
-                       Secure your spot and start your journey today
+                        Secure your spot and start your journey today
                     </>
                 }
                 link="https://student.arisemedicalacademy.com/register" />

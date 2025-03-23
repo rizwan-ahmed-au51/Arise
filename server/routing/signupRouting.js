@@ -15,20 +15,21 @@ signupRouting.post("/login", async (req, res) => {
     const { email, password } = req.body;
     let exists = await Signup.findOne({ email: email });
     if (!exists) {
-        return res.status(404).send("No user Found");
+        res.send("No user Found");
     }
-    if (exists.password !== password) {
-        return res.status(401).send("Invalid Password");
+    else if (exists.password != password) {
+        res.send("Invalid");
+    } else {
+        let payload = {
+            user: {
+                id: exists._id,
+            },
+        };
+        jwt.sign(payload, "Mehriz6229", { expiresIn: 360000 }, (err, token) => {
+            if (err) throw err;
+            res.send({ token });
+        });
     }
-    let payload = {
-        user: {
-            id: exists._id,
-        },
-    };
-    jwt.sign(payload, "Mehriz6229", { expiresIn: 360000 }, (err, token) => {
-        if (err) throw err;
-        res.send({ token });
-    });
 });
 
 

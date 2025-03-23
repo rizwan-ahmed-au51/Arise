@@ -312,7 +312,7 @@ const Courses = () => {
                         <CourseCard key={course.id} course={course} />
                     ))}
 
-                    {/* Add the contact form section here */}
+                   
                 </div>
             </section>
         </main>

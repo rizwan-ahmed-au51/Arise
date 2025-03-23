@@ -80,8 +80,8 @@ const CelebGallery = () => {
         const time = 10000;
 
         const animStart = () => {
-            if (!obj.classList.contains(styles.active)) {
-                obj.classList.add(styles.active);
+            if (!obj.classList.contains(styles.active1)) {
+                obj.classList.add(styles.active1);
                 setTimeout(() => {
                     animEnd();
                 }, time);
@@ -89,13 +89,13 @@ const CelebGallery = () => {
         };
 
         const animEnd = () => {
-            obj.classList.remove(styles.active);
-            void obj.offsetWidth; // Force reflow to restart animation
+            obj.classList.remove(styles.active1);
+            void obj.offsetWidth;
         };
 
         document.addEventListener("scroll", animStart);
         window.addEventListener("resize", animStart);
-        animStart(); 
+        animStart();
 
         return () => {
             document.removeEventListener("scroll", animStart);

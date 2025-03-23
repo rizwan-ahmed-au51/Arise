@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import apple from '../../../assets/images/icons/apple.png';
 import android from '../../../assets/images/icons/android.png';
 import bannerImage from "../../../assets/images/index-page/06 (2).png";
 import styles from "./OnlineBatch.module.scss";
 
 const OnlineBatch = () => {
+  // State to store the fetched batch dates
+  const [batchDates, setBatchDates] = useState([]);
+
+  // Fetch batch dates from the API
+  useEffect(() => {
+    const fetchBatchDates = async () => {
+      try {
+        const response = await fetch("http://localhost:4000/batchdates");
+        const data = await response.json();
+        // Extract the `date` property from each object
+        const dates = data.map((item) => item.date);
+        setBatchDates(dates); // Update state with extracted dates
+      } catch (error) {
+        console.error("Error fetching batch dates:", error);
+      }
+    };
+
+    fetchBatchDates();
+  }, []); // Empty dependency array ensures this runs only once on mount
+
   return (
     <section className={styles.online_Batches}>
       <div className="container">
@@ -18,11 +38,15 @@ const OnlineBatch = () => {
               changes. Stay organized and ahead in your learning journey.
             </p>
 
-            <h6>Online Batches Starting Soon</h6>
-            <div className={styles.batchDates}>
-              {["Feb 01", "Feb 08", "Feb 15", "Feb 20", "Feb 25", "Mar 01"].map((date, index) => (
-                <span key={index} className={styles.batchDate}>{date}</span>
-              ))}
+            <div className={styles.datesContainer}>
+              <h6>Online Batches Starting Soon</h6>
+              <div className={styles.Dates}>
+                {batchDates.map((date, index) => (
+                  <span key={index} className={styles.dateContainer}>
+                    {date}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <p id="download">Download the App Now</p>
