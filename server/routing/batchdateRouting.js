@@ -30,6 +30,8 @@ batchdateRouting.post("/batchdates", async (req, res) => {
     }
 });
 
+
+
 batchdateRouting.get("/batchdates", async (req, res) => {
     let batchdate = await Batchdates.find();
     res.send(batchdate);
