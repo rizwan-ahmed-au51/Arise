@@ -3,7 +3,7 @@ import styles from "./admin.module.scss";
 import logo from "../Admin/BLUE.png";
 import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
 // import { HappyProvider } from '@ant-design/happy-work-theme';
-
+import SchoolIcon from '@mui/icons-material/School';
 
 import {
     MenuFoldOutlined,
@@ -17,7 +17,7 @@ const { Header, Sider, Content } = Layout;
 const menuItems = [
     { key: "1", to: "", icon: <UserOutlined />, label: "Home" },
     { key: "2", to: "batchcard", icon: <TodayRoundedIcon />, label: "Batch Dates" },
-    { key: "3", to: "Gallery", icon: <TodayRoundedIcon />, label: "Gallery" },
+    { key: "3", to: "topper", icon: <SchoolIcon />, label: "Topper" },
 
 ];
 

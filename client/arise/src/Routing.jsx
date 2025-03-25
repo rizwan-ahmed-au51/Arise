@@ -20,6 +20,8 @@ import NoPage from './Pages/NoPage'
 import DashHome from './Admin/DashHome'
 import Home from './Components/Home/Home'
 import CelebGallery from './Pages/Gallery/CelebGallery/CelebGallery'
+import Toppers from './Admin/Toppers'
+import TopperList from './Pages/Gallery/TopperList'
 
 const Routing = () => {
     return (
@@ -31,7 +33,7 @@ const Routing = () => {
                     <Route path='' element={<DashHome />} />
                     <Route path='batchcard' element={<BatchCard />} />
                     <Route path='batchdates' element={<BatchDates />} />
-                    <Route path='gallery' element={<Gallery />} />
+                    <Route path='topper' element={<Toppers />} />
                 </Route >
 
 
@@ -43,6 +45,7 @@ const Routing = () => {
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/gallery' element={<Gallery />} />
                 <Route path="/celeb-gallery" element={<CelebGallery />} />
+                <Route path='/topperlist' element={<TopperList />} />
                 <Route path='/branches/hyderabad' Component={hyd} />
                 <Route path='/branches/delhi' Component={delhi} />
                 <Route path='/branches/jaipur' Component={jaipur} />

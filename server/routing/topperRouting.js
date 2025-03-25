@@ -23,4 +23,9 @@ topperRouting.post("/topper", upload.single("image"), async (req, res) => {
     res.send(result);
 });
 
+topperRouting.get("/topper", async (req, res) => {
+    let topper = await Toppers.find().sort({ marks: -1 });
+    res.send(topper);
+});
+
 module.exports = topperRouting;

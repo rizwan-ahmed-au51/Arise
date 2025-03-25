@@ -12,7 +12,7 @@ let topperSchema = new mongoose.Schema({
         required: true,
     },
     marks: {
-        type: String,
+        type: Number,
         required: true,
     },
     stdname: {

@@ -12,5 +12,6 @@ app.use("/", signupRouting);
 app.use("/", batchdateRouting);
 app.use("/", topperRouting);
 
+app.use(express.static("public"));
 
 app.listen(4000, () => console.log("Server is Ready👍"));
