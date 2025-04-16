@@ -33,7 +33,9 @@ const Routing = () => {
                     <Route path='' element={<DashHome />} />
                     <Route path='batchcard' element={<BatchCard />} />
                     <Route path='batchdates' element={<BatchDates />} />
-                    <Route path='topper' element={<Toppers />} />
+                    <Route path='addtopper' element={<Toppers />} />
+                    <Route path='topperlist' element={<TopperList />} />
+
                 </Route >
 
 

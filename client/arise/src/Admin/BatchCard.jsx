@@ -40,7 +40,7 @@ const BatchCard = () => {
             });
     };
     const goToBatchDates = () => {
-        navigate('/admindashboard/batchdates'); // Navigate to the nested route
+        navigate('/admindashboard/batchdates'); 
     };
     return (
         <div className="container">
@@ -82,7 +82,6 @@ const BatchCard = () => {
                             })
                         }
                     </div>
-
                 </div>
             </div>
         </div>

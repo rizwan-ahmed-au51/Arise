@@ -51,7 +51,7 @@ const BatchDates = () => {
             });
     };
     const goToBatchDates = () => {
-        navigate('/admindashboard/batchcard');          // Navigate to the nested route
+        navigate('/admindashboard/batchcard');
     };
     return (
         <main className={styles.dates}>

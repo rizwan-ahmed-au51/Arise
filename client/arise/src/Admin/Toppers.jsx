@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import { Bounce, toast, ToastContainer } from 'react-toastify';
 import styles from "./admin.module.scss";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Toppers = () => {
     const [img, setImg] = useState("");
     const [marks, setMarks] = useState("");
     const [stdname, setStdname] = useState("");
+    const navigate = useNavigate();
+
     const addtopper = (e) => {
         e.preventDefault();
         let formdata = new FormData(); // Move inside the function to create new FormData each time
@@ -14,7 +17,7 @@ const Toppers = () => {
         formdata.append("marks", marks); // Changed from "stdmarks" to match your backend
         formdata.append("stdname", stdname); // Changed from "student" to match your backend
 
-        axios.post(`http://localhost:4000/topper`, formdata)
+        axios.post(`http://localhost:4000/addtopper`, formdata)
             .then((res) => {
                 toast.success('🦄 New Topper Added!', {
                     position: "top-right",
@@ -36,17 +39,20 @@ const Toppers = () => {
                 toast.error('Failed to add topper!');
             });
     };
+    const goToList = () => {
+        navigate('/admindashboard/topperlist');
+    };
 
     return (
         <main className={styles.dates}>
             <section className=' justify-center'>
                 <div className="container">
                     <div className="row  justify-content-center">
-                        {/* <div className="mb-4 text-end">
-                            <button className='btn btn-primary' onClick={goToBatchDates}>
-                                Back to Card
+                        <div className="mb-4 text-end">
+                            <button className='btn btn-primary' onClick={goToList}>
+                                Back to List
                             </button>
-                        </div> */}
+                        </div>
                         <ToastContainer />
                         <h1>Create Toppers</h1>
                         <div className="col-lg-6 ">
@@ -71,11 +77,6 @@ const Toppers = () => {
                         </div>
                     </div>
                 </div>
-            </section>
-
-
-            <section className={`p-5 ${styles.batch_card}`}>
-                {/* <BatchCard /> */}
             </section>
         </main>
     )
