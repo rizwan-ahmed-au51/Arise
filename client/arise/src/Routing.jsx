@@ -21,7 +21,9 @@ import DashHome from './Admin/DashHome'
 import Home from './Components/Home/Home'
 import CelebGallery from './Pages/Gallery/CelebGallery/CelebGallery'
 import Toppers from './Admin/Toppers'
-import TopperList from './Pages/Gallery/TopperList'
+import TopperList from './Admin/TopperList'
+import ToppersList from './Pages/Gallery/ToppersList'
+import EditTopper from './Admin/EditTopper'
 
 const Routing = () => {
     return (
@@ -35,6 +37,7 @@ const Routing = () => {
                     <Route path='batchdates' element={<BatchDates />} />
                     <Route path='addtopper' element={<Toppers />} />
                     <Route path='topperlist' element={<TopperList />} />
+                    <Route path="edit-topper/:id" element={<EditTopper />} />
 
                 </Route >
 
@@ -47,7 +50,7 @@ const Routing = () => {
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/gallery' element={<Gallery />} />
                 <Route path="/celeb-gallery" element={<CelebGallery />} />
-                <Route path='/topperlist' element={<TopperList />} />
+                <Route path='/topperlist' element={<ToppersList />} />
                 <Route path='/branches/hyderabad' Component={hyd} />
                 <Route path='/branches/delhi' Component={delhi} />
                 <Route path='/branches/jaipur' Component={jaipur} />

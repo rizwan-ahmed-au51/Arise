@@ -8,6 +8,7 @@ const Toppers = () => {
     const [img, setImg] = useState("");
     const [marks, setMarks] = useState("");
     const [stdname, setStdname] = useState("");
+    const [year, setYear] = useState("");
     const navigate = useNavigate();
 
     const addtopper = (e) => {
@@ -16,6 +17,7 @@ const Toppers = () => {
         formdata.append("image", img);
         formdata.append("marks", marks); // Changed from "stdmarks" to match your backend
         formdata.append("stdname", stdname); // Changed from "student" to match your backend
+        formdata.append("year", year);
 
         axios.post(`http://localhost:4000/addtopper`, formdata)
             .then((res) => {
@@ -68,10 +70,25 @@ const Toppers = () => {
                                     <div className="mb-4">
                                         <input type="text" name='std' placeholder='Enter Student Name' className='form-control' required value={stdname} onChange={(e) => setStdname(e.target.value)} />
                                     </div>
+                                    <div className="mb-4">
+                                        <select className="form-control" value={year} onChange={(e) => setYear(e.target.value)} required>
+                                            <option value="">Select Year</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                           
+                                        </select>
+                                    </div>
 
                                     <div className="mb-4 text-end">
                                         <input type="Submit" className='btn btn-primary' value="Add Topper" onClick={addtopper} />
                                     </div>
+
+
                                 </form>
                             </div>
                         </div>

@@ -44,34 +44,31 @@ const Branches = () => {
         },
     ];
 
-    // Fetch data from the API and merge with initialStateCards
     useEffect(() => {
         const fetchStateCardDetails = async () => {
             try {
                 const response = await fetch('http://localhost:4000/batchdates');
                 const data = await response.json();
-
-                // Merge API data with initialStateCards
+    
                 const updatedStateCards = initialStateCards.map((city) => {
                     const apiData = data.find((item) => item.branch.toLowerCase() === city.id);
                     return {
                         ...city,
-                        title: apiData ? apiData.branch : city.title, // Use API title if available, else fallback
-                        dates: apiData ? apiData.date : city.dates, // Use API dates if available, else fallback
+                        title: apiData ? apiData.branch : city.title,
+                        dates: apiData ? apiData.date : city.dates,
                     };
                 });
-
+    
                 setStateCards(updatedStateCards);
             } catch (error) {
                 console.error('Error fetching state card details:', error);
-                // If API fails, use the initial state cards
                 setStateCards(initialStateCards);
             }
         };
-
+    
         fetchStateCardDetails();
-    }); // Empty dependency array ensures this runs only once on mount
-
+    }, []);
+    
     // Handle map link clicks
     const handleMapLinkClick = (cityId) => {
         setActiveCard(cityId);
