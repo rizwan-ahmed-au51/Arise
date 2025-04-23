@@ -1,131 +1,112 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import style from './Header.module.scss';
-import { FaAngleDown } from "react-icons/fa";
-import { FaBars } from "react-icons/fa6";
-import logo from "../../assets/images/logo/BLUE@300x.png";
-import apple from '../../assets/images/icons/apple.png';
-import android from '../../assets/images/icons/android.png';
+import React, { useState, useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
+import styles from './Header.module.scss';
+import logo from '../../assets/images/logo/BLUE@300x.png';
+import androidIcon from '../../assets/images/icons/android.png';
+import appleIcon from '../../assets/images/icons/apple.png';
+
+// MUI Icons
+import MenuIcon from '@mui/icons-material/Menu';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [navBlack, setNavBlack] = useState(false);
+  const dropdownRef = useRef(null);
 
+  // Handle scroll to toggle background
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setNavBlack(window.scrollY > 0);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  const toggleDropdown = (e) => {
-    e.stopPropagation();
-    setActiveDropdown((prev) => !prev);
-  };
-
+  // Close dropdown on outside click
   useEffect(() => {
-    const closeDropdown = (e) => {
-      if (!e.target.closest(`.${style.dropdown}`) && !e.target.closest(".dropdown-trigger")) {
-        setActiveDropdown(false);
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
       }
     };
-    document.addEventListener("click", closeDropdown);
-    return () => document.removeEventListener("click", closeDropdown);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // Toggle dropdown
+  const toggleDropdown = (e) => {
+    e.preventDefault();
+    e.stopPropagation(); // Prevent event bubbling
+    setDropdownOpen(!dropdownOpen);
+  };
 
   return (
     <>
-
-      <div className={style.responsive_bar}>
-        <div className={style.tab}>
-          <div className={style.menu} onClick={toggleMenu}>
-            <h4>
-              <FaBars />
-            </h4>
+      <div className={styles.responsiveBar}>
+        <div className={styles.tab}>
+          <div className={styles.menu} onClick={() => setMenuOpen(!menuOpen)}>
+            <MenuIcon sx={{ fontSize: 30, color: '#254086' }} />
           </div>
-          <div className={style.logo}>
-            <img src={logo} alt="logo" />
-          </div>
-          <div className={style.login_btn}>
+          <div className={styles.logo}>
             <NavLink to="/">
-              <button>Enroll/Login</button>
+              <img src={logo} alt="logo" />
             </NavLink>
+          </div>
+          <div className={styles.loginBtn}>
+            <a href="https://student.arisemedicalacademy.com/register">
+              <button>Enroll/Login</button>
+            </a>
           </div>
         </div>
       </div>
 
-
-
-      <nav className={`${style.nav} ${isScrolled ? style.black : ""}`}>
-        <NavLink to="/"><img src={logo} alt="logo" /></NavLink>
-        <ul className={isMenuOpen ? "active" : ""}>
-          <li>
-            <NavLink to="/courses">Courses</NavLink>
-          </li>
-          <li>
-            <NavLink to="/faq">FAQ</NavLink>
-          </li>
-          <li>
-            <NavLink to="/ariseApp">Arise App</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="#" className="dropdown-trigger" onClick={toggleDropdown}>
-              Branches <FaAngleDown />
-            </NavLink>
-            {activeDropdown && (
-              <div className={style.dropdown}>
-                <NavLink to="/branches/hyderabad">Hyderabad</NavLink>
-                <NavLink to="/branches/delhi">Delhi</NavLink>
-                <NavLink to="/branches/jaipur">Jaipur</NavLink>
-                <NavLink to="/branches/chennai">Chennai</NavLink>
-                <NavLink to="/branches/kerala">Kerala</NavLink>
+      <nav className={navBlack ? styles.black : ''}>
+        <NavLink to="/">
+          <img src={logo} alt="logo" />
+        </NavLink>
+        <ul className={menuOpen ? styles.active : ''}>
+          <li><NavLink to="/courses">Courses</NavLink></li>
+          <li><NavLink to="/faq">FAQ</NavLink></li>
+          <li><NavLink to="/app">Arise App</NavLink></li>
+          <li><NavLink to="/about">About</NavLink></li>
+          <li ref={dropdownRef} className={styles.dropdownContainer}>
+            <button 
+              className={styles.dropdownToggle}
+              onClick={toggleDropdown}
+              aria-expanded={dropdownOpen}
+            >
+              Branches <ExpandMoreIcon fontSize="small" />
+            </button>
+            {dropdownOpen && (
+              <div className={styles.dropdown}>
+                <NavLink to="/hyd" onClick={() => setDropdownOpen(false)}>Hyderabad</NavLink>
+                <NavLink to="/delhi" onClick={() => setDropdownOpen(false)}>Delhi</NavLink>
+                <NavLink to="/jaipur" onClick={() => setDropdownOpen(false)}>Jaipur</NavLink>
+                <NavLink to="/chennai" onClick={() => setDropdownOpen(false)}>Chennai</NavLink>
+                <NavLink to="/kerala" onClick={() => setDropdownOpen(false)}>Kerala</NavLink>
               </div>
             )}
           </li>
-          <li>
-            <NavLink to="/contact">Contact Us</NavLink>
-          </li>
-          <li>
-            <NavLink to="/gallery">Gallery</NavLink>
-          </li>
-          <NavLink className={style.login1} to="#">
+          <li><NavLink to="/contact">Contact Us</NavLink></li>
+          <li><NavLink to="/gallery">Gallery</NavLink></li>
+          <a className={styles.login1} href="https://student.arisemedicalacademy.com/register">
             <button>Enroll/Login</button>
-          </NavLink>
-          <div className={style.bottom}>
-            <NavLink className={style.login} to="#">
+          </a>
+          <div className={styles.bottom}>
+            <a className={styles.login} href="https://student.arisemedicalacademy.com/register">
               <button>Enroll/Login</button>
-            </NavLink>
-            <h1>
-              <span>Arise</span> App
-            </h1>
-            <h3>
-              Join Over <span>10,000+</span> Successful Medical Aspirants
-            </h3>
-            <div className={style.header_right_links}>
-              <NavLink to="#">
-                <img src={apple} alt="apple" />
-                <div>
-                  <span>Get it on</span>
-                  <span>Apple Store</span>
-                </div>
-              </NavLink>
-              <NavLink to="#">
-                <img src={android} alt="android" />
-                <div>
-                  <span>Get it on</span>
-                  <span>Play Store</span>
-                </div>
-              </NavLink>
+            </a>
+            <h1><span>Arise</span> App</h1>
+            <h3>Join Over <span>40,000+</span> Successful Medical Aspirants</h3>
+            <div className={styles.icons}>
+              <a href="https://play.google.com/store/apps/details?id=com.arisemobile.app">
+                <img src={androidIcon} alt="Android" />
+              </a>
+              <a href="https://apps.apple.com/in/app/arise-medical-academy/id1581256443">
+                <img src={appleIcon} alt="Apple" />
+              </a>
             </div>
           </div>
         </ul>
@@ -134,7 +115,4 @@ const Header = () => {
   );
 };
 
-
-export default Header
-
-
+export default Header;

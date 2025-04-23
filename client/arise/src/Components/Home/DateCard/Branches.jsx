@@ -4,13 +4,10 @@ import mapImg from '../../../assets/images/index-page/map.png';
 import { NavLink } from 'react-router-dom';
 
 const Branches = () => {
-    // State to manage which state card is visible on small screens
-    const [activeCard, setActiveCard] = useState('hyderabad'); // Set default to 'hyderabad'
-
-    // State to store the fetched state card details
+    const [activeCard, setActiveCard] = useState('hyderabad');
     const [stateCards, setStateCards] = useState([]);
 
-    // Initial data for state cards (with register links)
+
     const initialStateCards = [
         {
             id: 'hyderabad',
@@ -49,7 +46,7 @@ const Branches = () => {
             try {
                 const response = await fetch('http://localhost:4000/batchdates');
                 const data = await response.json();
-    
+
                 const updatedStateCards = initialStateCards.map((city) => {
                     const apiData = data.find((item) => item.branch.toLowerCase() === city.id);
                     return {
@@ -58,18 +55,18 @@ const Branches = () => {
                         dates: apiData ? apiData.date : city.dates,
                     };
                 });
-    
+
                 setStateCards(updatedStateCards);
             } catch (error) {
                 console.error('Error fetching state card details:', error);
                 setStateCards(initialStateCards);
             }
         };
-    
+
         fetchStateCardDetails();
     }, []);
+
     
-    // Handle map link clicks
     const handleMapLinkClick = (cityId) => {
         setActiveCard(cityId);
     };
@@ -87,13 +84,13 @@ const Branches = () => {
                             find the <br /> perfect class for your medical coaching journey!
                         </p>
 
-                        {/* Map and State Cards */}
+                        
                         <div className={styles.branchesContent2}>
-                            {/* Map */}
+                           
                             <div className={`${styles.map} text-center`}>
                                 <img src={mapImg} alt="Map" className={styles.map1} />
 
-                                {/* Map Links */}
+                               
                                 {stateCards.map((city) => (
                                     <div key={city.id} className={styles[city.id]}>
                                         <NavLink
